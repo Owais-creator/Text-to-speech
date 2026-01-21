@@ -1,9 +1,9 @@
-const voiceSelect = document.getElementById("voiceSelect");
-const synth = window.speechSynthesis;
+let  voiceSelect = document.getElementById("voiceSelect");
+let  synth = window.speechSynthesis;
 
 let voices = [];
 
-const populateVoiceList = () => {
+let populateVoiceList = () => {
     try {
         voices = synth.getVoices();
         voiceSelect.innerHTML = ''; 
@@ -28,7 +28,7 @@ try {
     console.error("Error initializing voice list or setting event listener:", error);
 }
 
-const speak = () => {
+let speak = () => {
     try {
         
         let text = document.getElementById("text").value;
